@@ -19,7 +19,7 @@
 # VS Code which you may wish to be included in version control, so this line
 # is commented out by default.
 #.vscode/
-
+> @@ -30,6 +30,8 @@ //что это?:DD
 # Flutter/Dart/Pub related
 **/doc/api/
 **/ios/Flutter/.last_build_id
@@ -30,8 +30,8 @@
 .pub-cache/
 .pub/
 /build/
-local.properties
-pubspec.lock
++local.properties
++pubspec.lock
 
 # Web related
 lib/generated_plugin_registrant.dart
