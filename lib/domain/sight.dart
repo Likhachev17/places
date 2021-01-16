@@ -1,3 +1,5 @@
+import 'package:flutter/material.dart';
+
 class Sight {
   final String nameSight;
   final double lan;
@@ -6,5 +8,12 @@ class Sight {
   final String details;
   final String type;
 
-  Sight(this.nameSight, this.lan, this.lon, this.url, this.details, this.type);
+  Sight({
+    @required this.nameSight,
+    @required this.lan,
+    @required this.lon,
+    @required this.url,
+    @required this.details,
+    @required this.type,
+  });
 }
