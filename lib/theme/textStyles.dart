@@ -8,7 +8,7 @@ const sightListScreenTitle = TextStyle(
   color: AppColors.primary,
 );
 
-const sightCardTypeTextStyle = TextStyle(
+const sightCardTypePreviewTextStyle = TextStyle(
   fontSize: 14,
   fontWeight: FontWeight.bold,
   fontFamily: 'Roboto',
@@ -17,7 +17,16 @@ const sightCardTypeTextStyle = TextStyle(
   color: AppColors.white,
 );
 
-const sightCardNameTextStyle = TextStyle(
+const sightCardTypeDetailsTextStyle = TextStyle(
+  fontSize: 14,
+  fontWeight: FontWeight.w700,
+  fontFamily: 'Roboto',
+  fontStyle: FontStyle.normal,
+  height: 18 / 14,
+  color: AppColors.primary,
+);
+
+const sightCardNamePreviewTextStyle = TextStyle(
   fontSize: 16,
   fontWeight: FontWeight.w500,
   fontFamily: 'Roboto',
@@ -26,11 +35,74 @@ const sightCardNameTextStyle = TextStyle(
   color: AppColors.primary,
 );
 
-const sightCardDescriptionTextStyle = TextStyle(
+const sightCardNameDetailsTextStyle = TextStyle(
+  fontSize: 24,
+  fontWeight: FontWeight.w700,
+  fontFamily: 'Roboto',
+  fontStyle: FontStyle.normal,
+  height: 20 / 24,
+  color: AppColors.primary,
+);
+
+const sightCardDescriptionPreviewTextStyle = TextStyle(
   fontSize: 14,
   fontWeight: FontWeight.normal,
   fontFamily: 'Roboto',
   fontStyle: FontStyle.normal,
   height: 18 / 14,
   color: AppColors.secondary,
+);
+
+const sightCardDescriptionDetailsTextStyle = TextStyle(
+  fontSize: 14,
+  fontWeight: FontWeight.w400,
+  fontFamily: 'Roboto',
+  fontStyle: FontStyle.normal,
+  height: 18 / 14,
+  color: AppColors.primary,
+);
+
+const sightCardWorkTimeDetailsTextStyle = TextStyle(
+  fontSize: 14,
+  fontWeight: FontWeight.w400,
+  fontFamily: 'Roboto',
+  fontStyle: FontStyle.normal,
+  height: 18 / 14,
+  color: AppColors.secondary,
+);
+
+const sightCardToScheduleBtnActiveTextStyle = TextStyle(
+  fontSize: 14,
+  fontWeight: FontWeight.w400,
+  fontFamily: 'Roboto',
+  fontStyle: FontStyle.normal,
+  height: 18 / 14,
+  color: AppColors.primary,
+);
+
+const sightCardToScheduleBtnInactiveTextStyle = TextStyle(
+  fontSize: 14,
+  fontWeight: FontWeight.w400,
+  fontFamily: 'Roboto',
+  fontStyle: FontStyle.normal,
+  height: 18 / 14,
+  color: AppColors.inactive,
+);
+
+const sightCardFavoritesBtnActiveTextStyle = TextStyle(
+  fontSize: 14,
+  fontWeight: FontWeight.w400,
+  fontFamily: 'Roboto',
+  fontStyle: FontStyle.normal,
+  height: 18 / 14,
+  color: AppColors.primary,
+);
+
+const sightCardFavoritesBtnInactiveTextStyle = TextStyle(
+  fontSize: 14,
+  fontWeight: FontWeight.w400,
+  fontFamily: 'Roboto',
+  fontStyle: FontStyle.normal,
+  height: 18 / 14,
+  color: AppColors.inactive,
 );

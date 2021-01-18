@@ -45,7 +45,7 @@ class SightCard extends StatelessWidget {
                     padding: const EdgeInsets.only(top: 16, left: 16),
                     child: Text(
                       sight.type,
-                      style: sightCardTypeTextStyle,
+                      style: sightCardTypePreviewTextStyle,
                     ),
                   ),
                   Container(
@@ -81,7 +81,7 @@ class SightCard extends StatelessWidget {
                       child: Text(
                         sight.nameSight,
                         maxLines: 2,
-                        style: sightCardNameTextStyle,
+                        style: sightCardNamePreviewTextStyle,
                       ),
                     ),
                     Padding(
@@ -94,7 +94,7 @@ class SightCard extends StatelessWidget {
                       // наверное мне следует отступать от названия места, а не от дна? Это мой первый опыт)) любые комментарии полезны
                       child: Text(
                         sight.details,
-                        style: sightCardDescriptionTextStyle,
+                        style: sightCardDescriptionPreviewTextStyle,
                         maxLines: 2,
                         overflow: TextOverflow.ellipsis,
                       ),
