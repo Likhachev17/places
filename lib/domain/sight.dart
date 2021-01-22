@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 class Sight {
+  /*You can edit Sight objects parameters here*/
   final String nameSight;
   final double lan;
   final double lon;

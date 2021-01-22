@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:places/mocks.dart';
-import 'package:places/theme/textStyles.dart';
 import 'package:places/ui/screen/sight_card.dart';
+import 'package:places/ui/widgets/AppBarTitle.dart';
+import 'package:places/ui/widgets/customAppBar.dart';
 
 class SightListScreen extends StatefulWidget {
   @override
@@ -9,30 +10,16 @@ class SightListScreen extends StatefulWidget {
 }
 
 class _SightListScreenState extends State<SightListScreen> {
+  // This is "Welcome" screen
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.transparent,
-        elevation: 0,
-        toolbarHeight: 128,
-        title: const Text(
-          'Список \nинтересных мест',
-          style: sightListScreenTitle,
-          maxLines: 2,
-          overflow: TextOverflow.ellipsis,
-        ),
+      appBar: CustomAppBar(
+        title: AppBarTitle(),
       ),
       body: SingleChildScrollView(
         child: Column(
-          children: [
-            SightCard(sight: mocks[0]),
-            SightCard(sight: mocks[1]),
-            SightCard(sight: mocks[2]),
-            SightCard(sight: mocks[3]),
-            SightCard(sight: mocks[4]),
-            SightCard(sight: mocks[5]),
-          ],
+          children: mocks.map((m) => SightCard(sight: m)).toList(),
         ),
       ),
     );

@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:places/theme/colors.dart';
 
@@ -53,7 +52,7 @@ const sightCardDescriptionPreviewTextStyle = TextStyle(
   color: AppColors.secondary,
 );
 
-const sightCardDescriptionDetailsTextStyle = TextStyle(
+const CardDetailsDescriptionTextStyle = TextStyle(
   fontSize: 14,
   fontWeight: FontWeight.w400,
   fontFamily: 'Roboto',
