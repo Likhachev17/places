@@ -132,7 +132,6 @@ class SightCardDetails extends StatelessWidget {
 
   final String details;
 
-  // TODO задать паддинг у карточки?
   @override
   Widget build(BuildContext context) {
     return Container(
