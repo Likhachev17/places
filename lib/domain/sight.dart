@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 
+///List of the sight's parameters
 class Sight {
-  /*You can edit Sight objects parameters here*/
   final String nameSight;
   final double lan;
   final double lon;
   final String url;
   final String details;
   final String type;
+  final String workTime;
 
   Sight({
     @required this.nameSight,
@@ -16,5 +17,6 @@ class Sight {
     @required this.url,
     @required this.details,
     @required this.type,
+    @required this.workTime,
   });
 }

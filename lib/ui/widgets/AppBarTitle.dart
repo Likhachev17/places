@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:places/constants.dart';
 import 'package:places/theme/textStyles.dart';
 
+///App bar's parameters
 class AppBarTitle extends StatelessWidget {
-  // This class responsible for AppBar parameters
   const AppBarTitle({
     Key key,
   }) : super(key: key);

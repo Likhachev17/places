@@ -3,11 +3,8 @@ import 'package:places/domain/sight.dart';
 import 'package:places/theme/textStyles.dart';
 import 'package:places/theme/colors.dart';
 
+/// This class builds page "details" of sight card
 class SightDetails extends StatelessWidget {
-  // This class builds page "details" of sight card by Image(1) and button "back"(2), sight name (3), type (4), work time (5), description (6),
-  //button "build a route" (7), button "to schedule" (8) and button "to favorites" (9).
-  // TODO еще разок убрать пустые строки везде
-  //TODO положить в моки время работы
   final Sight sight;
 
   const SightDetails({
@@ -23,8 +20,8 @@ class SightDetails extends StatelessWidget {
           children: [
             Stack(
               children: [
-                CardDetailsImage(url: sight.url), //(1)
-                CardDetailsBackButton(), //(2)
+                CardDetailsImage(url: sight.url),
+                CardDetailsBackButton(),
               ],
             ),
             Padding(
@@ -35,16 +32,18 @@ class SightDetails extends StatelessWidget {
               ),
               child: Column(
                 children: [
-                  CardDetailsName(name: sight.nameSight), //(3)
+                  CardDetailsName(name: sight.nameSight),
                   Row(
                     children: [
-                      CardDetailsType(type: sight.type), //(4)
+                      CardDetailsType(type: sight.type),
                       const SizedBox(width: 16),
-                      CardDetailsWorkTime(), //(5)
+                      CardDetailsWorkTime(
+                        workTime: sight.workTime,
+                      ),
                     ],
                   ),
-                  CardDetailsDescription(details: sight.details), //(6)
-                  CardDetailsBuildARouteBtn(), //(7)
+                  CardDetailsDescription(details: sight.details),
+                  CardDetailsBuildARouteBtn(),
                   SizedBox(
                     height: 24,
                   ),
@@ -52,8 +51,8 @@ class SightDetails extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
-                      CardDetailsToScheduleBtn(), //(8)
-                      CardDetailsToFavoritesBtn(), //(9)
+                      CardDetailsToScheduleBtn(),
+                      CardDetailsToFavoritesBtn(),
                     ],
                   ),
                 ],
@@ -66,6 +65,7 @@ class SightDetails extends StatelessWidget {
   }
 }
 
+///This widget displays images of the sight on the sight details screen
 class CardDetailsImage extends StatelessWidget {
   const CardDetailsImage({Key key, @required this.url}) : super(key: key);
   final String url;
@@ -84,6 +84,7 @@ class CardDetailsImage extends StatelessWidget {
   }
 }
 
+///White "back" button in the upper left corner on the sight details screen
 class CardDetailsBackButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -110,6 +111,7 @@ class CardDetailsBackButton extends StatelessWidget {
   }
 }
 
+///This widget displays name of the sight on the sight details screen
 class CardDetailsName extends StatelessWidget {
   const CardDetailsName({Key key, @required this.name}) : super(key: key);
   final String name;
@@ -128,6 +130,7 @@ class CardDetailsName extends StatelessWidget {
   }
 }
 
+///This widget displays type of the sight on the sight details screen
 class CardDetailsType extends StatelessWidget {
   const CardDetailsType({Key key, @required this.type}) : super(key: key);
   final String type;
@@ -141,16 +144,22 @@ class CardDetailsType extends StatelessWidget {
   }
 }
 
+///This widget displays working time of the sight on the sight details screen
 class CardDetailsWorkTime extends StatelessWidget {
+  const CardDetailsWorkTime({Key key, @required this.workTime})
+      : super(key: key);
+  final String workTime;
+
   @override
   Widget build(BuildContext context) {
     return Text(
-      'закрыто до 09:00',
+      workTime,
       style: sightCardWorkTimeDetailsTextStyle,
     );
   }
 }
 
+///This widget displays full description of the sight on the sight details screen
 class CardDetailsDescription extends StatelessWidget {
   const CardDetailsDescription({Key key, @required this.details})
       : super(key: key);
@@ -168,6 +177,7 @@ class CardDetailsDescription extends StatelessWidget {
   }
 }
 
+///This widget displays "Build a route" button on the sight details screen
 class CardDetailsBuildARouteBtn extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -192,6 +202,7 @@ class CardDetailsBuildARouteBtn extends StatelessWidget {
   }
 }
 
+///This widget displays "To schedule" button on the sight details screen
 class CardDetailsToScheduleBtn extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -210,6 +221,7 @@ class CardDetailsToScheduleBtn extends StatelessWidget {
   }
 }
 
+///This widget displays "To favorites" button on the sight details screen
 class CardDetailsToFavoritesBtn extends StatelessWidget {
   @override
   Widget build(BuildContext context) {

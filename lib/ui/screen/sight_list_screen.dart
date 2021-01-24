@@ -9,8 +9,8 @@ class SightListScreen extends StatefulWidget {
   _SightListScreenState createState() => _SightListScreenState();
 }
 
+///Screen with a list of sights
 class _SightListScreenState extends State<SightListScreen> {
-  // This is "Welcome" screen
   @override
   Widget build(BuildContext context) {
     return Scaffold(

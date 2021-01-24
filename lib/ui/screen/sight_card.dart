@@ -4,8 +4,11 @@ import 'package:places/domain/sight.dart';
 import 'package:places/theme/colors.dart';
 import 'package:places/theme/textStyles.dart';
 
+//TODO если место закрыто, выводить worktime, иначе описание
+//TODO приделать нормальный worktime вместо заглушки
+
+///SightCard widget
 class SightCard extends StatelessWidget {
-  //This class contain SightCard widget which builds by decoration with SightCardHeader(contains background image(1), sight type(2)), SightCardName(3) and SightCardDetails(4).
   final Sight sight;
 
   const SightCard({Key key, this.sight}) : super(key: key);
@@ -25,7 +28,6 @@ class SightCard extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               SightCardHeader(
-                // (1), (2)
                 imageUrl: sight.url,
                 type: sight.type,
               ),
@@ -34,7 +36,6 @@ class SightCard extends StatelessWidget {
                 name: sight.nameSight,
               ),
               SightCardDetails(
-                //(4)
                 details: sight.details,
               ),
             ],
@@ -45,6 +46,7 @@ class SightCard extends StatelessWidget {
   }
 }
 
+///Top half of Card widget
 class SightCardHeader extends StatelessWidget {
   const SightCardHeader({
     Key key,
@@ -63,7 +65,7 @@ class SightCardHeader extends StatelessWidget {
           width: double.infinity,
           height: 96,
           child: Image.network(
-            imageUrl, //(1)
+            imageUrl,
             fit: BoxFit.cover,
           ),
         ),
@@ -71,7 +73,7 @@ class SightCardHeader extends StatelessWidget {
           top: 16,
           left: 16,
           child: Text(
-            type, //(2)
+            type,
             style: sightCardTypePreviewTextStyle,
           ),
         ),
@@ -84,11 +86,13 @@ class SightCardHeader extends StatelessWidget {
             onPressed: () {},
           ),
         ),
+        LinearProgressIndicator(),
       ],
     );
   }
 }
 
+///This widget displays sight name on card
 class SightCardName extends StatelessWidget {
   const SightCardName({
     Key key,
@@ -112,7 +116,7 @@ class SightCardName extends StatelessWidget {
         child: ConstrainedBox(
           constraints: const BoxConstraints(maxWidth: 156),
           child: Text(
-            name, //(3)
+            name,
             textAlign: TextAlign.start,
             maxLines: 2,
             overflow: TextOverflow.ellipsis,
@@ -124,6 +128,7 @@ class SightCardName extends StatelessWidget {
   }
 }
 
+///This widget displays short description of the sight on card
 class SightCardDetails extends StatelessWidget {
   const SightCardDetails({
     Key key,
@@ -142,10 +147,9 @@ class SightCardDetails extends StatelessWidget {
       ),
       width: double.infinity,
       child: Text(
-        details, //(4)
+        details,
         style: sightCardDescriptionPreviewTextStyle,
         maxLines: 1,
-        //Если название состоит из 3 и более слов, ужать описание до одной строки?
         overflow: TextOverflow.ellipsis,
       ),
     );

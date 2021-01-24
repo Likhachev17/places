@@ -1,6 +1,7 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
 
+///The main colors of the app
 class AppColors {
   static const Color white = const Color(0xFFFFFFFF);
   static const Color cardBackground = const Color(0xFFF5F5F5);

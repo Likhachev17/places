@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:places/theme/colors.dart';
 
+/// Text styles
 const sightListScreenTitle = TextStyle(
   fontSize: 32,
   fontWeight: FontWeight.bold,
