@@ -3,11 +3,12 @@ import 'package:places/constants.dart';
 import 'package:places/domain/sight.dart';
 import 'package:places/theme/colors.dart';
 import 'package:places/theme/textStyles.dart';
+import 'package:places/ui/widgets/NetworkImageWithLoadingIndicator';
 
 //TODO если место закрыто, выводить worktime, иначе описание
 //TODO приделать нормальный worktime вместо заглушки
 
-///SightCard widget
+/// SightCard widget
 class SightCard extends StatelessWidget {
   final Sight sight;
 
@@ -27,15 +28,14 @@ class SightCard extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              SightCardHeader(
-                imageUrl: sight.url,
+              _SightCardHeader(
+                url: sight.url,
                 type: sight.type,
               ),
-              SightCardName(
-                //(3)
+              _SightCardName(
                 name: sight.nameSight,
               ),
-              SightCardDetails(
+              _SightCardDetails(
                 details: sight.details,
               ),
             ],
@@ -46,15 +46,15 @@ class SightCard extends StatelessWidget {
   }
 }
 
-///Top half of Card widget
-class SightCardHeader extends StatelessWidget {
-  const SightCardHeader({
+/// Top half of SightCard widget
+class _SightCardHeader extends StatelessWidget {
+  const _SightCardHeader({
     Key key,
-    @required this.imageUrl,
+    @required this.url,
     @required this.type,
   }) : super(key: key);
 
-  final String imageUrl;
+  final String url;
   final String type;
 
   @override
@@ -64,8 +64,8 @@ class SightCardHeader extends StatelessWidget {
         SizedBox(
           width: double.infinity,
           height: 96,
-          child: Image.network(
-            imageUrl,
+          child: NetworkImageWithLoadingIndicator(
+            url: url,
             fit: BoxFit.cover,
           ),
         ),
@@ -86,15 +86,14 @@ class SightCardHeader extends StatelessWidget {
             onPressed: () {},
           ),
         ),
-        LinearProgressIndicator(),
       ],
     );
   }
 }
 
-///This widget displays sight name on card
-class SightCardName extends StatelessWidget {
-  const SightCardName({
+/// This widget displays sight name on card
+class _SightCardName extends StatelessWidget {
+  const _SightCardName({
     Key key,
     @required this.name,
   }) : super(key: key);
@@ -128,9 +127,9 @@ class SightCardName extends StatelessWidget {
   }
 }
 
-///This widget displays short description of the sight on card
-class SightCardDetails extends StatelessWidget {
-  const SightCardDetails({
+/// This widget displays short description of the sight on card
+class _SightCardDetails extends StatelessWidget {
+  const _SightCardDetails({
     Key key,
     @required this.details,
   }) : super(key: key);

@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:places/domain/sight.dart';
 
 final List<Sight> mocks = [
@@ -10,6 +11,8 @@ final List<Sight> mocks = [
         'офис Surf Studio. Нормальной фотки не нашел, поэтому вот вам я. В камеру смотрю',
     type: 'building',
     workTime: 'Закрыто до 09:00',
+    openTime: TimeOfDay(hour: 9, minute: 0),
+    closeTime: TimeOfDay(hour: 21, minute: 0),
   ),
   Sight(
     nameSight: 'Мой дом',
@@ -19,6 +22,8 @@ final List<Sight> mocks = [
     details: 'Мой дом. Здесь я сижу и смотрю вас',
     type: 'building',
     workTime: 'Закрыто до 09:00',
+    openTime: TimeOfDay(hour: 7, minute: 0),
+    closeTime: TimeOfDay(hour: 21, minute: 0),
   ),
   Sight(
     nameSight: 'Блошиный рынок',
@@ -29,6 +34,8 @@ final List<Sight> mocks = [
     'Блошиный рынок. Довольно странное место, но здесь я провожу все выходные покупая ерунду',
     type: 'event',
     workTime: 'Закрыто до 09:00',
+    openTime: TimeOfDay(hour: 9, minute: 0),
+    closeTime: TimeOfDay(hour: 12, minute: 0),
   ),
   Sight(
     nameSight: 'Рейв в лесу',
@@ -39,6 +46,8 @@ final List<Sight> mocks = [
     'Меня как-то угораздило сюда попасть. Выглядит клево, но жутковато:D',
     type: 'event',
     workTime: 'Закрыто до 09:00',
+    openTime: TimeOfDay(hour: 22, minute: 0),
+    closeTime: TimeOfDay(hour: 23, minute: 59),
   ),
   Sight(
     nameSight: 'Русский магазин в Гуанчжоу',
@@ -49,6 +58,8 @@ final List<Sight> mocks = [
     'Самое популярное место сбора моделей в Гуанчжоу. Атмосферные вечера с ребятами из разных стран и знакомые продукты из СНГ. Эх, вернуться бы туда на вечерок)',
     type: 'place',
     workTime: 'Закрыто до 09:00',
+    openTime: TimeOfDay(hour: 20, minute: 0),
+    closeTime: TimeOfDay(hour: 23, minute: 0),
   ),
   Sight(
     nameSight: 'Шанхай',
@@ -59,5 +70,7 @@ final List<Sight> mocks = [
     'А здесь я жил и работал в Шанхае. Очень красивый и невероятно современный город',
     type: 'place',
     workTime: 'Закрыто до 09:00',
+    openTime: TimeOfDay(hour: 9, minute: 0),
+    closeTime: TimeOfDay(hour: 21, minute: 0),
   ),
 ];

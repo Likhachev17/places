@@ -2,13 +2,13 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:places/theme/colors.dart';
 
+/// App title text
 class AppTexts {
-  // Here you can change app Title text
   static const appHeader = 'Список\nинтересных мест';
 }
 
+/// Sight card decorations
 class AppDecorations {
-  // This class contains SightCard decoration parameters
   static const cardDecoration = BoxDecoration(
     color: AppColors.cardBackground,
     borderRadius: BorderRadius.all(

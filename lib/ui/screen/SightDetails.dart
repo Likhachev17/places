@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:places/domain/sight.dart';
 import 'package:places/theme/textStyles.dart';
 import 'package:places/theme/colors.dart';
+import 'package:places/ui/widgets/NetworkImageWithLoadingIndicator';
 
-/// This class builds page "details" of sight card
+/// Model of Sight details screen
 class SightDetails extends StatelessWidget {
   final Sight sight;
 
@@ -20,8 +21,8 @@ class SightDetails extends StatelessWidget {
           children: [
             Stack(
               children: [
-                CardDetailsImage(url: sight.url),
-                CardDetailsBackButton(),
+                _CardDetailsImage(url: sight.url),
+                _CardDetailsBackButton(),
               ],
             ),
             Padding(
@@ -32,18 +33,18 @@ class SightDetails extends StatelessWidget {
               ),
               child: Column(
                 children: [
-                  CardDetailsName(name: sight.nameSight),
+                  _CardDetailsName(name: sight.nameSight),
                   Row(
                     children: [
-                      CardDetailsType(type: sight.type),
+                      _CardDetailsType(type: sight.type),
                       const SizedBox(width: 16),
-                      CardDetailsWorkTime(
+                      _CardDetailsWorkTime(
                         workTime: sight.workTime,
                       ),
                     ],
                   ),
-                  CardDetailsDescription(details: sight.details),
-                  CardDetailsBuildARouteBtn(),
+                  _CardDetailsDescription(details: sight.details),
+                  _CardDetailsBuildARouteBtn(),
                   SizedBox(
                     height: 24,
                   ),
@@ -51,8 +52,8 @@ class SightDetails extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
-                      CardDetailsToScheduleBtn(),
-                      CardDetailsToFavoritesBtn(),
+                      _CardDetailsToScheduleBtn(),
+                      _CardDetailsToFavoritesBtn(),
                     ],
                   ),
                 ],
@@ -65,9 +66,9 @@ class SightDetails extends StatelessWidget {
   }
 }
 
-///This widget displays images of the sight on the sight details screen
-class CardDetailsImage extends StatelessWidget {
-  const CardDetailsImage({Key key, @required this.url}) : super(key: key);
+/// images of the sight on the sight details screen
+class _CardDetailsImage extends StatelessWidget {
+  const _CardDetailsImage({Key key, @required this.url}) : super(key: key);
   final String url;
 
   @override
@@ -75,17 +76,16 @@ class CardDetailsImage extends StatelessWidget {
     return (Container(
       width: double.infinity,
       height: 360,
-      child: Image.network(
-        url,
+      child: NetworkImageWithLoadingIndicator(
+        url: url,
         fit: BoxFit.cover,
-        height: 360,
       ),
     ));
   }
 }
 
-///White "back" button in the upper left corner on the sight details screen
-class CardDetailsBackButton extends StatelessWidget {
+/// White "back" button in the upper left corner on the sight details screen
+class _CardDetailsBackButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Positioned(
@@ -111,9 +111,9 @@ class CardDetailsBackButton extends StatelessWidget {
   }
 }
 
-///This widget displays name of the sight on the sight details screen
-class CardDetailsName extends StatelessWidget {
-  const CardDetailsName({Key key, @required this.name}) : super(key: key);
+/// name of the sight on the sight details screen
+class _CardDetailsName extends StatelessWidget {
+  const _CardDetailsName({Key key, @required this.name}) : super(key: key);
   final String name;
 
   @override
@@ -130,9 +130,9 @@ class CardDetailsName extends StatelessWidget {
   }
 }
 
-///This widget displays type of the sight on the sight details screen
-class CardDetailsType extends StatelessWidget {
-  const CardDetailsType({Key key, @required this.type}) : super(key: key);
+/// type of the sight on the sight details screen
+class _CardDetailsType extends StatelessWidget {
+  const _CardDetailsType({Key key, @required this.type}) : super(key: key);
   final String type;
 
   @override
@@ -144,9 +144,9 @@ class CardDetailsType extends StatelessWidget {
   }
 }
 
-///This widget displays working time of the sight on the sight details screen
-class CardDetailsWorkTime extends StatelessWidget {
-  const CardDetailsWorkTime({Key key, @required this.workTime})
+/// working time of the sight on the sight details screen
+class _CardDetailsWorkTime extends StatelessWidget {
+  const _CardDetailsWorkTime({Key key, @required this.workTime})
       : super(key: key);
   final String workTime;
 
@@ -159,9 +159,9 @@ class CardDetailsWorkTime extends StatelessWidget {
   }
 }
 
-///This widget displays full description of the sight on the sight details screen
-class CardDetailsDescription extends StatelessWidget {
-  const CardDetailsDescription({Key key, @required this.details})
+/// full description of the sight on the sight details screen
+class _CardDetailsDescription extends StatelessWidget {
+  const _CardDetailsDescription({Key key, @required this.details})
       : super(key: key);
   final String details;
 
@@ -177,8 +177,8 @@ class CardDetailsDescription extends StatelessWidget {
   }
 }
 
-///This widget displays "Build a route" button on the sight details screen
-class CardDetailsBuildARouteBtn extends StatelessWidget {
+/// "Build a route" button on the sight details screen
+class _CardDetailsBuildARouteBtn extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return FlatButton.icon(
@@ -202,8 +202,8 @@ class CardDetailsBuildARouteBtn extends StatelessWidget {
   }
 }
 
-///This widget displays "To schedule" button on the sight details screen
-class CardDetailsToScheduleBtn extends StatelessWidget {
+/// "To schedule" button on the sight details screen
+class _CardDetailsToScheduleBtn extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return FlatButton.icon(
@@ -221,8 +221,8 @@ class CardDetailsToScheduleBtn extends StatelessWidget {
   }
 }
 
-///This widget displays "To favorites" button on the sight details screen
-class CardDetailsToFavoritesBtn extends StatelessWidget {
+/// "To favorites" button on the sight details screen
+class _CardDetailsToFavoritesBtn extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return FlatButton.icon(
