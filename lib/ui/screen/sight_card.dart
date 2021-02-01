@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:places/constants.dart';
 import 'package:places/domain/sight.dart';
 import 'package:places/theme/colors.dart';
-import 'package:places/theme/textStyles.dart';
-import 'package:places/ui/widgets/NetworkImageWithLoadingIndicator';
+import 'package:places/theme/text_styles.dart';
+import 'package:places/ui/widgets/network_image_with_loading_indicator';
 
 //TODO если место закрыто, выводить worktime, иначе описание
 //TODO приделать нормальный worktime вместо заглушки

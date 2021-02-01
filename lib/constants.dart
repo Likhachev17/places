@@ -5,6 +5,9 @@ import 'package:places/theme/colors.dart';
 /// App title text
 class AppTexts {
   static const appHeader = 'Список\nинтересных мест';
+  static const toFavoritesBtnText = 'В избранное';
+  static const buildARouteBtnText = 'ПОСТРОИТЬ МАРШРУТ';
+  static const toScheduleBtnText = 'В избранное';
 }
 
 /// Sight card decorations

@@ -7,8 +7,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   const CustomAppBar({Key key, @required this.title}) : super(key: key);
 
   @override
-  Size get preferredSize => Size.fromHeight(
-      140); //Подскажите пожалуйста, почему только при 140 виджет отрисовывается нормально?
+  Size get preferredSize => Size.fromHeight(140);
 
   @override
   Widget build(BuildContext context) {

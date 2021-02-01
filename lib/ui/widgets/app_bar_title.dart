@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:places/constants.dart';
-import 'package:places/theme/textStyles.dart';
+import 'package:places/theme/text_styles.dart';
 
 ///App bar's parameters
 class AppBarTitle extends StatelessWidget {

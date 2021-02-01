@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:places/domain/sight.dart';
-import 'package:places/theme/textStyles.dart';
+import 'package:places/theme/text_styles.dart';
 import 'package:places/theme/colors.dart';
-import 'package:places/ui/widgets/NetworkImageWithLoadingIndicator';
+import 'package:places/ui/widgets/network_image_with_loading_indicator';
+import 'package:places/constants.dart';
 
 /// Model of Sight details screen
 class SightDetails extends StatelessWidget {
@@ -194,8 +195,8 @@ class _CardDetailsBuildARouteBtn extends StatelessWidget {
         color: AppColors.white,
         size: 20,
       ),
-      label: const Text(
-        'ПОСТРОИТЬ МАРШРУТ',
+      label: Text(
+        AppTexts.buildARouteBtnText,
         style: TextStyle(color: AppColors.white, fontSize: 14),
       ),
     );
@@ -214,7 +215,7 @@ class _CardDetailsToScheduleBtn extends StatelessWidget {
         color: AppColors.inactive,
       ),
       label: Text(
-        'Запланировать',
+        AppTexts.toScheduleBtnText,
         style: sightCardToScheduleBtnInactiveTextStyle,
       ),
     );
@@ -233,7 +234,7 @@ class _CardDetailsToFavoritesBtn extends StatelessWidget {
         color: AppColors.primary,
       ),
       label: Text(
-        'В избранное',
+        AppTexts.toFavoritesBtnText,
         style: sightCardFavoritesBtnActiveTextStyle,
       ),
     );
