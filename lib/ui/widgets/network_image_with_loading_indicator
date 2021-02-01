@@ -1,0 +1,39 @@
+import 'package:flutter/material.dart';
+
+/// Widget with image and Circular progress indicator
+class NetworkImageWithLoadingIndicator extends StatelessWidget {
+  final String url;
+  final BoxFit fit;
+
+  const NetworkImageWithLoadingIndicator({
+    Key key,
+    this.url,
+    this.fit = BoxFit.cover,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Image.network(
+      url,
+      fit: fit,
+      loadingBuilder: (context, child, loadingProgress) {
+        if (loadingProgress == null) {
+          // download completed, show image
+          return child;
+        } else {
+          //expectedTotalBytes can be null, in this case show Circular progress indicator
+          if (loadingProgress.expectedTotalBytes == null ||
+              loadingProgress.expectedTotalBytes == 0) {
+            return CircularProgressIndicator();
+          }
+          // calculating of progress
+          final progress = loadingProgress.cumulativeBytesLoaded /
+              loadingProgress.expectedTotalBytes;
+          return Center(
+            child: CircularProgressIndicator(value: progress),
+          );
+        }
+      },
+    );
+  }
+}
