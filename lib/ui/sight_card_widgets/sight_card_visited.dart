@@ -5,14 +5,12 @@ import 'package:places/theme/colors.dart';
 import 'package:places/theme/text_styles.dart';
 import 'package:places/ui/widgets/network_image_with_loading_indicator';
 
-//TODO если место закрыто, выводить worktime, иначе описание
-//TODO приделать нормальный worktime вместо заглушки
-
-/// SightCard widget
+//TODO все три иконки объединить в одну с разными наборами аргументов
+/// SightCard widget with icons 'share' and 'remove' and text field 'goal achieved [date]'
 class SightCard extends StatelessWidget {
   final Sight sight;
 
-  const SightCard({Key key, this.sight}) : super(key: key);
+  const SightCard({Key key, @required this.sight}) : assert(sight != null);
 
   @override
   Widget build(BuildContext context) {
@@ -35,9 +33,10 @@ class SightCard extends StatelessWidget {
               _SightCardName(
                 name: sight.nameSight,
               ),
-              _SightCardDetails(
-                details: sight.details,
+              _SightCardGoalAchieved(
+                goalAchieved: AppTexts.goalAchieved,
               ),
+              _SightCardWorkTime(workTime: AppTexts.workTimeFalse),
             ],
           ),
         ),
@@ -52,7 +51,7 @@ class _SightCardHeader extends StatelessWidget {
     Key key,
     @required this.url,
     @required this.type,
-  }) : super(key: key);
+  }) : assert(url != null && type != null);
 
   final String url;
   final String type;
@@ -80,10 +79,23 @@ class _SightCardHeader extends StatelessWidget {
         Positioned(
           top: 3,
           right: 2,
-          child: IconButton(
-            icon: Icon(Icons.favorite_border),
-            color: AppColors.white,
-            onPressed: () {},
+          child: Row(
+            children: [
+              IconButton(
+                icon: Icon(Icons.share_outlined),
+                color: AppColors.white,
+                onPressed: () {},
+              ),
+              SizedBox(
+                height: 22,
+                width: 23,
+              ),
+              IconButton(
+                icon: Icon(Icons.close),
+                color: AppColors.white,
+                onPressed: () {},
+              ),
+            ],
           ),
         ),
       ],
@@ -91,12 +103,12 @@ class _SightCardHeader extends StatelessWidget {
   }
 }
 
-/// This widget displays sight name on card
+/// Sight name on card
 class _SightCardName extends StatelessWidget {
   const _SightCardName({
     Key key,
     @required this.name,
-  }) : super(key: key);
+  }) : assert(name != null);
 
   final String name;
 
@@ -127,14 +139,14 @@ class _SightCardName extends StatelessWidget {
   }
 }
 
-/// This widget displays short description of the sight on card
-class _SightCardDetails extends StatelessWidget {
-  const _SightCardDetails({
+/// Goal achieved text on card
+class _SightCardGoalAchieved extends StatelessWidget {
+  const _SightCardGoalAchieved({
     Key key,
-    @required this.details,
-  }) : super(key: key);
+    @required this.goalAchieved,
+  }) : assert(goalAchieved != null);
 
-  final String details;
+  final String goalAchieved;
 
   @override
   Widget build(BuildContext context) {
@@ -146,8 +158,36 @@ class _SightCardDetails extends StatelessWidget {
       ),
       width: double.infinity,
       child: Text(
-        details,
-        style: sightCardDescriptionPreviewTextStyle,
+        goalAchieved,
+        style: sightCardWantToVisitGoalAchieved,
+        maxLines: 1,
+        overflow: TextOverflow.ellipsis,
+      ),
+    );
+  }
+}
+
+/// Work time filed on card
+class _SightCardWorkTime extends StatelessWidget {
+  const _SightCardWorkTime({
+    Key key,
+    @required this.workTime,
+  }) : assert(workTime != null);
+
+  final String workTime;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: EdgeInsets.only(
+        left: 16,
+        top: 2,
+        right: 16,
+      ),
+      width: double.infinity,
+      child: Text(
+        workTime,
+        style: sightCardWantToVisitVisited,
         maxLines: 1,
         overflow: TextOverflow.ellipsis,
       ),

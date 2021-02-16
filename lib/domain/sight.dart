@@ -11,6 +11,7 @@ class Sight {
   final String workTime;
   final TimeOfDay openTime;
   final TimeOfDay closeTime;
+  final String scheduledDate;
 
   Sight(
       {@required this.nameSight,
@@ -21,5 +22,6 @@ class Sight {
       @required this.type,
       @required this.workTime,
       this.openTime,
-      this.closeTime});
+      this.closeTime,
+      this.scheduledDate});
 }
