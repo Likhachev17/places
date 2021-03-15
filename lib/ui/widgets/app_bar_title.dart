@@ -12,7 +12,7 @@ class AppBarTitle extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       AppTexts.appHeader,
-      style: sightListScreenTitle,
+      style: largeTitleTextStyle.copyWith(color: Theme.of(context).buttonColor),
       maxLines: 2,
       overflow: TextOverflow.ellipsis,
     );

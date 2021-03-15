@@ -6,8 +6,6 @@ import 'package:places/theme/colors.dart';
 import 'package:places/theme/custom_icons.dart';
 import 'package:places/theme/text_styles.dart';
 import 'package:places/ui/widgets/network_image_with_loading_indicator';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:places/theme/custom_icons.dart';
 
 /// SightCard widget
 class SightCard extends StatelessWidget {
@@ -23,7 +21,9 @@ class SightCard extends StatelessWidget {
         height: 188,
         width: double.infinity,
         clipBehavior: Clip.antiAlias,
-        decoration: AppDecorations.cardDecoration,
+        decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(16),
+            color: Theme.of(context).backgroundColor),
         child: AspectRatio(
           aspectRatio: 3.0 / 2.0,
           child: Column(
@@ -78,7 +78,11 @@ class _SightCardHeader extends StatelessWidget {
           left: 16,
           child: Text(
             type,
-            style: sightCardTypePreviewTextStyle,
+            style: Theme
+                .of(context)
+                .textTheme
+                .bodyText1
+                .copyWith(color: AppColors.white),
           ),
         ),
         Positioned(
@@ -136,7 +140,7 @@ class _SightCardName extends StatelessWidget {
             textAlign: TextAlign.start,
             maxLines: 2,
             overflow: TextOverflow.ellipsis,
-            style: sightCardNamePreviewTextStyle,
+            style: subtitle2TextStyle,
           ),
         ),
       ),
@@ -164,7 +168,13 @@ class _SightCardScheduledDate extends StatelessWidget {
       width: double.infinity,
       child: Text(
         scheduledDate,
-        style: sightCardWantToVisitScheduleDate,
+        style: Theme
+            .of(context)
+            .textTheme
+            .bodyText2
+            .copyWith(color: Theme
+            .of(context)
+            .accentColor),
         maxLines: 1,
         overflow: TextOverflow.ellipsis,
       ),
@@ -192,7 +202,11 @@ class _SightCardWorkTime extends StatelessWidget {
       width: double.infinity,
       child: Text(
         workTime,
-        style: sightCardWantToVisitVisited,
+        style: Theme
+            .of(context)
+            .textTheme
+            .bodyText2
+            .copyWith(color: AppColors.inactiveBlack),
         maxLines: 1,
         overflow: TextOverflow.ellipsis,
       ),
