@@ -106,3 +106,67 @@ const sightCardFavoritesBtnInactiveTextStyle = TextStyle(
   height: 18 / 14,
   color: AppColors.inactive,
 );
+
+const visitingScreenAppBarTitleTextStyle = TextStyle(
+  fontSize: 18,
+  fontWeight: FontWeight.w500,
+  fontFamily: 'Roboto',
+  height: 24 / 18,
+  color: AppColors.primaryDark,
+);
+
+const visitingScreenInactiveTabTextStyle = TextStyle(
+  //TODO заменить цвет
+  fontSize: 14,
+  fontWeight: FontWeight.w700,
+  fontFamily: 'Roboto',
+  height: 18 / 14,
+  color: AppColors.secondary,
+);
+
+const visitingScreenActiveTabTextStyle = TextStyle(
+  fontSize: 14,
+  fontWeight: FontWeight.w700,
+  fontFamily: 'Roboto',
+  height: 18 / 14,
+  color: AppColors.white,
+);
+
+const sightCardWantToVisitScheduleDate = TextStyle(
+    fontSize: 14,
+    fontWeight: FontWeight.w400,
+    fontFamily: 'Roboto',
+    height: 18 / 14,
+    color: AppColors.green);
+
+const sightCardWantToVisitVisited = TextStyle(
+  fontSize: 14,
+  fontWeight: FontWeight.w400,
+  fontFamily: 'Roboto',
+  height: 18 / 14,
+  color: AppColors.secondary,
+);
+
+const sightCardWantToVisitGoalAchieved = TextStyle(
+  fontSize: 14,
+  fontWeight: FontWeight.w400,
+  fontFamily: 'Roboto',
+  height: 18 / 14,
+  color: AppColors.secondary,
+);
+
+const favoritesScreenEmptyPlaces = TextStyle(
+  fontSize: 14,
+  fontWeight: FontWeight.w400,
+  fontFamily: 'Roboto',
+  height: 18 / 14,
+  color: AppColors.inactive,
+);
+
+const favoritesScreenEmptyPlacesBig = TextStyle(
+  fontSize: 18,
+  fontWeight: FontWeight.w500,
+  fontFamily: 'Roboto',
+  height: 24 / 18,
+  color: AppColors.inactive,
+);

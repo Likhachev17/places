@@ -4,6 +4,8 @@ import 'package:places/theme/text_styles.dart';
 import 'package:places/theme/colors.dart';
 import 'package:places/ui/widgets/network_image_with_loading_indicator';
 import 'package:places/constants.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:places/theme/custom_icons.dart';
 
 /// Model of Sight details screen
 class SightDetails extends StatelessWidget {
@@ -67,7 +69,7 @@ class SightDetails extends StatelessWidget {
   }
 }
 
-/// images of the sight on the sight details screen
+/// Images of the sight on the sight details screen
 class _CardDetailsImage extends StatelessWidget {
   const _CardDetailsImage({Key key, @required this.url}) : super(key: key);
   final String url;
@@ -112,7 +114,7 @@ class _CardDetailsBackButton extends StatelessWidget {
   }
 }
 
-/// name of the sight on the sight details screen
+/// Name of the sight on the sight details screen
 class _CardDetailsName extends StatelessWidget {
   const _CardDetailsName({Key key, @required this.name}) : super(key: key);
   final String name;
@@ -131,7 +133,7 @@ class _CardDetailsName extends StatelessWidget {
   }
 }
 
-/// type of the sight on the sight details screen
+/// Type of the sight on the sight details screen
 class _CardDetailsType extends StatelessWidget {
   const _CardDetailsType({Key key, @required this.type}) : super(key: key);
   final String type;
@@ -145,7 +147,7 @@ class _CardDetailsType extends StatelessWidget {
   }
 }
 
-/// working time of the sight on the sight details screen
+/// Working time of the sight on the sight details screen
 class _CardDetailsWorkTime extends StatelessWidget {
   const _CardDetailsWorkTime({Key key, @required this.workTime})
       : super(key: key);
@@ -160,7 +162,7 @@ class _CardDetailsWorkTime extends StatelessWidget {
   }
 }
 
-/// full description of the sight on the sight details screen
+/// Full description of the sight on the sight details screen
 class _CardDetailsDescription extends StatelessWidget {
   const _CardDetailsDescription({Key key, @required this.details})
       : super(key: key);
@@ -190,11 +192,7 @@ class _CardDetailsBuildARouteBtn extends StatelessWidget {
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(12),
       ),
-      icon: ImageIcon(
-        AssetImage('assets/Icons/GO.png'),
-        color: AppColors.white,
-        size: 20,
-      ),
+      icon: SvgPicture.asset(iconGO),
       label: Text(
         AppTexts.buildARouteBtnText,
         style: TextStyle(color: AppColors.white, fontSize: 14),
@@ -209,9 +207,8 @@ class _CardDetailsToScheduleBtn extends StatelessWidget {
   Widget build(BuildContext context) {
     return FlatButton.icon(
       onPressed: () {},
-      icon: ImageIcon(
-        AssetImage('assets/Icons/Calendar.png'),
-        size: 22,
+      icon: SvgPicture.asset(
+        iconCalendar,
         color: AppColors.inactive,
       ),
       label: Text(
@@ -228,9 +225,8 @@ class _CardDetailsToFavoritesBtn extends StatelessWidget {
   Widget build(BuildContext context) {
     return FlatButton.icon(
       onPressed: () {},
-      icon: ImageIcon(
-        AssetImage('assets/Icons/Heart.png'),
-        size: 22,
+      icon: SvgPicture.asset(
+        iconHeart,
         color: AppColors.primary,
       ),
       label: Text(
