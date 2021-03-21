@@ -11,10 +11,6 @@ final lightTheme = ThemeData.light().copyWith(
   scaffoldBackgroundColor: AppColors.white,
   buttonColor: AppColors.ltPrimaryColor,
   hoverColor: AppColors.white,
-  floatingActionButtonTheme: FloatingActionButtonThemeData(
-    backgroundColor: AppColors.ltAccentColor,
-    foregroundColor: AppColors.ltCardBackground,
-  ),
   bottomNavigationBarTheme: BottomNavigationBarThemeData(
     backgroundColor: AppColors.white,
     unselectedItemColor: AppColors.ltPrimaryColorLight,
@@ -27,6 +23,23 @@ final lightTheme = ThemeData.light().copyWith(
     subtitle2: subtitle2TextStyle,
     bodyText1: body1BoldTextStyle,
     bodyText2: body2NormalTextStyle,
+  ),
+  elevatedButtonTheme: ElevatedButtonThemeData(
+    style: ElevatedButton.styleFrom(
+      textStyle: titleTextStyle,
+      primary: AppColors.white,
+      minimumSize: Size.fromHeight(48.0),
+      elevation: 0.0,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(12.0),
+      ),
+    ),
+  ),
+  textButtonTheme: TextButtonThemeData(
+    style: TextButton.styleFrom(
+      primary: AppColors.ltPrimaryColor,
+      textStyle: body2NormalTextStyle,
+    ),
   ),
 );
 
@@ -52,8 +65,21 @@ final darkTheme = ThemeData.dark().copyWith(
     unselectedItemColor: AppColors.inactiveBlack,
     selectedItemColor: AppColors.white,
   ),
-  buttonTheme: ButtonThemeData(
-    buttonColor: AppColors.dtPrimaryColorDark,
-    textTheme: ButtonTextTheme.primary,
+  elevatedButtonTheme: ElevatedButtonThemeData(
+    style: ElevatedButton.styleFrom(
+      textStyle: titleTextStyle,
+      primary: AppColors.dtPrimaryColor,
+      minimumSize: Size.fromHeight(48.0),
+      elevation: 0.0,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(12.0),
+      ),
+    ),
+  ),
+  textButtonTheme: TextButtonThemeData(
+    style: TextButton.styleFrom(
+      primary: AppColors.dtPrimaryColor,
+      textStyle: body2NormalTextStyle,
+    ),
   ),
 );

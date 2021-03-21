@@ -20,7 +20,10 @@ class CustomTab extends StatelessWidget {
   Widget build(BuildContext context) {
     return Expanded(
         child: GestureDetector(
-      onTap: () => onTap?.call(),
+      onTap: () {
+        onTap?.call();
+        print('tabBar tapped');
+      },
       child: Container(
         decoration: BoxDecoration(
           color: isActive
