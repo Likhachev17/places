@@ -11,7 +11,7 @@ class AppColors {
   static const ltActiveColor = ltPrimaryColor;
 
   /// Dark theme colors
-  static const dtGreen = Color(0xFF6ADA6F);
+  static const dtAccentColor = Color(0xFF6ADA6F);
   static const dtRed = Color(0xFFCF2A2A);
   static const dtPrimaryColorDark = Color(0xFF1A1A20);
   static const dtPrimaryColor = Color(0xFF21222C);

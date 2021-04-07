@@ -41,11 +41,18 @@ final lightTheme = ThemeData.light().copyWith(
       textStyle: body2NormalTextStyle,
     ),
   ),
+  sliderTheme: SliderThemeData(
+    trackHeight: 2.0,
+    thumbColor: AppColors.white,
+    overlayColor: AppColors.transparent,
+    activeTrackColor: AppColors.ltAccentColor,
+    inactiveTrackColor: AppColors.inactiveBlack,
+  ),
 );
 
 final darkTheme = ThemeData.dark().copyWith(
   primaryColor: AppColors.dtPrimaryColor,
-  accentColor: AppColors.dtGreen,
+  accentColor: AppColors.dtAccentColor,
   disabledColor: AppColors.inactiveBlack,
   scaffoldBackgroundColor: AppColors.dtPrimaryColor,
   cardColor: AppColors.dtPrimaryColorDark,
@@ -81,5 +88,12 @@ final darkTheme = ThemeData.dark().copyWith(
       primary: AppColors.dtPrimaryColor,
       textStyle: body2NormalTextStyle,
     ),
+  ),
+  sliderTheme: SliderThemeData(
+    trackHeight: 2.0,
+    thumbColor: AppColors.white,
+    overlayColor: AppColors.transparent,
+    activeTrackColor: AppColors.ltAccentColor,
+    inactiveTrackColor: AppColors.inactiveBlack,
   ),
 );

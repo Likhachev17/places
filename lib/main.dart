@@ -7,6 +7,7 @@ import 'package:places/ui/screen/visiting_screen.dart';
 import 'package:places/ui/widgets/empty_favorites_places.dart';
 import 'mocks.dart';
 import 'package:places/ui/screen/res/themes.dart';
+import 'package:places/ui/screen/filters_screen/filters_screen.dart';
 
 void main() {
   runApp(MyApp());
@@ -27,7 +28,8 @@ class _MyAppState extends State<MyApp> {
       // home: SightDetails(
       //   sight: mocks[6],
       // ),
-      home: VisitingScreen(),
+      // home: VisitingScreen(),
+      home: FiltersScreen(),
     );
   }
 }

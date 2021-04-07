@@ -41,18 +41,14 @@ class CustomTab extends StatelessWidget {
               maxLines: 1,
               overflow: TextOverflow.ellipsis,
               style: isActive
-                  ? Theme
-                  .of(context)
-                  .textTheme
-                  .bodyText1
-                  .copyWith(color: Theme
-                  .of(context)
-                  .hoverColor)
-                  : Theme
-                  .of(context)
-                  .textTheme
-                  .bodyText1
-                  .copyWith(color: AppColors.inactiveBlack),
+                  ? Theme.of(context)
+                      .textTheme
+                      .bodyText1
+                      .copyWith(color: Theme.of(context).hoverColor)
+                  : Theme.of(context)
+                      .textTheme
+                      .bodyText1
+                      .copyWith(color: AppColors.inactiveBlack),
             ),
           ),
         ),

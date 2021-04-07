@@ -38,6 +38,13 @@ flutter:
     - assets/icons/GO.svg
     - assets/icons/GOBig.svg
     - assets/icons/EmptyFavoritesPlaces.svg
+    - assets/icons/Hotel.svg
+    - assets/icons/Restaurant.svg
+    - assets/icons/ParticularPlace.svg
+    - assets/icons/Park.svg
+    - assets/icons/Museum.svg
+    - assets/icons/Cafe.svg
+    - assets/icons/Choice.svg
 
 
 
