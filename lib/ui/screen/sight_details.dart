@@ -1,3 +1,6 @@
+import 'dart:ffi';
+
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:places/domain/sight.dart';
 import 'package:places/theme/colors.dart';
@@ -96,16 +99,17 @@ class _CardDetailsBackButton extends StatelessWidget {
       child: SizedBox(
         width: 32,
         height: 32,
-        child: FlatButton(
-          padding: EdgeInsets.all(0),
-          onPressed: () {},
-          color: Theme.of(context).hoverColor,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(10),
+        child: ElevatedButton(
+          style: ButtonStyle(
+            padding: MaterialStateProperty.all(
+              EdgeInsets.all(0),
+            ),
           ),
+          onPressed: () => print('button "back" tapped'),
           child: Icon(
             Icons.arrow_back_ios_rounded,
             size: 15,
+            color: Theme.of(context).buttonColor,
           ),
         ),
       ),
@@ -208,21 +212,25 @@ class _CardDetailsDescription extends StatelessWidget {
 class _CardDetailsBuildARouteBtn extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return FlatButton.icon(
-      onPressed: () {},
-      color: Colors.green,
-      height: 48,
-      minWidth: double.infinity,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(12),
+    return ElevatedButton.icon(
+      style: ButtonStyle(
+        backgroundColor:
+        MaterialStateProperty.all(Theme
+            .of(context)
+            .accentColor),
       ),
-      icon: SvgPicture.asset(iconGO),
+      onPressed: () => print('button "Build a route" tapped'),
+      icon: SvgPicture.asset(
+        iconGO,
+        color: AppColors.white,
+      ),
       label: Text(
         AppTexts.buildARouteBtnText,
         style: Theme
             .of(context)
             .textTheme
-            .bodyText1,
+            .bodyText1
+            .copyWith(color: AppColors.white),
       ),
     );
   }
@@ -232,8 +240,8 @@ class _CardDetailsBuildARouteBtn extends StatelessWidget {
 class _CardDetailsToScheduleBtn extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return FlatButton.icon(
-      onPressed: () {},
+    return TextButton.icon(
+      onPressed: () => print('button "back" tapped'),
       icon: SvgPicture.asset(
         iconCalendar,
         color: AppColors.inactiveBlack,
@@ -256,8 +264,8 @@ class _CardDetailsToScheduleBtn extends StatelessWidget {
 class _CardDetailsToFavoritesBtn extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return FlatButton.icon(
-      onPressed: () {},
+    return TextButton.icon(
+      onPressed: () => print('button "To favorites" tapped'),
       icon: SvgPicture.asset(
         iconHeart,
         color: Theme

@@ -23,11 +23,11 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       theme: lightTheme,
       debugShowCheckedModeBanner: false,
-      //home: SightListScreen(),
-      home: SightDetails(
-        sight: mocks[6],
-      ),
-      //home: VisitingScreen(),
+      // home: SightListScreen(),
+      // home: SightDetails(
+      //   sight: mocks[6],
+      // ),
+      home: VisitingScreen(),
     );
   }
 }
