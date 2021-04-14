@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 /// Sight model
 class Sight {
   final String nameSight;
-  final double lan;
+  final double lat;
   final double lon;
   final String url;
   final String details;
@@ -15,7 +15,7 @@ class Sight {
 
   Sight(
       {@required this.nameSight,
-      @required this.lan,
+      @required this.lat,
       @required this.lon,
       @required this.url,
       @required this.details,
