@@ -13,7 +13,7 @@ dependencies:
 
   cupertino_icons: ^1.0.0
   dependencies:
-  flutter_svg: ^0.19.0
+  flutter_svg: 0.19.3
 
 dev_dependencies:
   flutter_test:
@@ -38,6 +38,14 @@ flutter:
     - assets/icons/GO.svg
     - assets/icons/GOBig.svg
     - assets/icons/EmptyFavoritesPlaces.svg
+    - assets/icons/Hotel.svg
+    - assets/icons/Restaurant.svg
+    - assets/icons/ParticularPlace.svg
+    - assets/icons/Park.svg
+    - assets/icons/Museum.svg
+    - assets/icons/Cafe.svg
+    - assets/icons/Choice.svg
+    - assets/icons/Info.svg
 
 
 

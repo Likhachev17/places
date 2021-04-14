@@ -17,3 +17,13 @@ const iconShare = 'assets/icons/Share.svg';
 const iconGO = 'assets/icons/GO.svg';
 const iconGOBig = 'assets/icons/GOBig.svg';
 const iconEmptyFavoritesPlaces = 'assets/icons/EmptyFavoritesPlaces.svg';
+
+const iconHotel = 'assets/icons/Hotel.svg';
+const iconRestaurant = 'assets/icons/Restaurant.svg';
+const iconParticularPlace = 'assets/icons/ParticularPlace.svg';
+const iconPark = 'assets/icons/Park.svg';
+const iconMuseum = 'assets/icons/Museum.svg';
+const iconCafe = 'assets/icons/Cafe.svg';
+const iconChoice = 'assets/icons/Choice.svg';
+
+const iconInfo = 'assets/icons/Info.svg';

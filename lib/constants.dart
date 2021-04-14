@@ -1,7 +1,3 @@
-import 'dart:ui';
-import 'package:flutter/material.dart';
-import 'package:places/theme/colors.dart';
-
 /// App text
 class AppTexts {
   static const appHeader = 'Список\nинтересных мест';
@@ -19,14 +15,17 @@ class AppTexts {
       'Отмечайте понравившиеся\n места и они появятся здесь.';
   static const tagPlacesYouVisited =
       'Завершите маршрут,\n чтобы место попало сюда.';
-}
 
-// /// Sight card decorations
-// class AppDecorations {
-//   static const cardDecoration = BoxDecoration(
-//     color: AppColors.ltCardBackground,
-//     borderRadius: BorderRadius.all(
-//       Radius.circular(16),
-//     ),
-//   );
-// }
+  static const String filtersDistanceMeters = 'м';
+  static const String filtersDistanceKilometers = 'км';
+  static const String filtersCategories = 'Категории';
+  static const String filtersDistance = 'Расстояние';
+  static const String filtersFrom = 'от';
+  static const String filtersTo = 'до';
+  static const String filtersShow = 'Показать';
+  static const String filtersClear = 'Очистить';
+
+  static const String settings = 'Настройки';
+  static const String darkTheme = 'Тёмная тема';
+  static const String watchTutorial = 'Смотреть туториал';
+}

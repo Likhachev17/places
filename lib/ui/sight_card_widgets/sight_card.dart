@@ -5,6 +5,7 @@ import 'package:places/theme/colors.dart';
 import 'package:places/theme/text_styles.dart';
 import 'package:places/ui/widgets/network_image_with_loading_indicator';
 import 'package:places/theme/custom_icons.dart';
+import 'package:places/ui/widgets/sight_card_icon_buttons.dart';
 
 //TODO если место закрыто, выводить worktime, иначе описание
 //TODO приделать нормальный worktime вместо заглушки
@@ -16,31 +17,34 @@ class SightCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.all(16),
-      child: Container(
-        height: 188,
-        width: double.infinity,
-        clipBehavior: Clip.antiAlias,
-        decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(16),
-            color: Theme.of(context).cardColor),
-        child: AspectRatio(
-          aspectRatio: 3.0 / 2.0,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              _SightCardHeader(
-                url: sight.url,
-                type: sight.type,
-              ),
-              _SightCardName(
-                name: sight.nameSight,
-              ),
-              _SightCardDetails(
-                details: sight.details,
-              ),
-            ],
+    return InkWell(
+      onTap: () => print('InkWell sight card tapped'),
+      child: Padding(
+        padding: EdgeInsets.all(16),
+        child: Container(
+          height: 188,
+          width: double.infinity,
+          clipBehavior: Clip.antiAlias,
+          decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(16),
+              color: Theme.of(context).cardColor),
+          child: AspectRatio(
+            aspectRatio: 3.0 / 2.0,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                _SightCardHeader(
+                  url: sight.url,
+                  type: sight.type,
+                ),
+                _SightCardName(
+                  name: sight.nameSight,
+                ),
+                _SightCardDetails(
+                  details: sight.details,
+                ),
+              ],
+            ),
           ),
         ),
       ),
@@ -54,10 +58,18 @@ class _SightCardHeader extends StatelessWidget {
     Key key,
     @required this.url,
     @required this.type,
+    this.isHeart,
+    this.isCalendar,
+    this.isShare,
+    this.isRemove,
   }) : assert(url != null && type != null);
 
   final String url;
   final String type;
+  final bool isHeart;
+  final bool isCalendar;
+  final bool isShare;
+  final bool isRemove;
 
   @override
   Widget build(BuildContext context) {
@@ -86,11 +98,7 @@ class _SightCardHeader extends StatelessWidget {
         Positioned(
           top: 3,
           right: 2,
-          child: IconButton(
-            icon: SvgPicture.asset(iconHeart),
-            color: AppColors.white,
-            onPressed: () {},
-          ),
+          child: ButtonsPackOnCard(isHeart: true,),
         ),
       ],
     );
@@ -165,5 +173,51 @@ class _SightCardDetails extends StatelessWidget {
         overflow: TextOverflow.ellipsis,
       ),
     );
+  }
+}
+
+// чуть позже доведу до ума переиспользуемую карточку
+/// Widget with sets of buttons on the top right card corner. If you need sightCard for SightListScreen, set [true] to bool isHeart.
+/// If you need sightCard for visiting_screen(Want to visit), set [true] to isCalendar for a card with the "Calendar" and "Remove" buttons.
+/// If you need sightCard for visiting_screen(Visited), set [true] to isShare for a card with the "Share" and "Remove" buttons.
+class ButtonsPackOnCard extends StatelessWidget {
+  final bool isHeart;
+  final bool isCalendar;
+  final bool isShare;
+
+  const ButtonsPackOnCard({
+    Key key,
+    this.isHeart,
+    this.isCalendar,
+    this.isShare,
+  }) : assert(
+  isHeart != null || (isCalendar != null) || (isShare != null),
+  );
+
+  @override
+  Widget build(BuildContext context) {
+    if (isShare == true) {
+      return Row(
+        children: [
+          iconButtonShare,
+          SizedBox(
+            width: 15,
+          ),
+          iconButtonRemove,
+        ],
+      );
+    } else if (isCalendar == true) {
+      return Row(
+        children: [
+          iconButtonCalendar,
+          SizedBox(
+            width: 15,
+          ),
+          iconButtonRemove,
+        ],
+      );
+    } else {
+      return iconButtonHeart;
+    }
   }
 }

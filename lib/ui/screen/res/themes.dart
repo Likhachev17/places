@@ -11,10 +11,6 @@ final lightTheme = ThemeData.light().copyWith(
   scaffoldBackgroundColor: AppColors.white,
   buttonColor: AppColors.ltPrimaryColor,
   hoverColor: AppColors.white,
-  floatingActionButtonTheme: FloatingActionButtonThemeData(
-    backgroundColor: AppColors.ltAccentColor,
-    foregroundColor: AppColors.ltCardBackground,
-  ),
   bottomNavigationBarTheme: BottomNavigationBarThemeData(
     backgroundColor: AppColors.white,
     unselectedItemColor: AppColors.ltPrimaryColorLight,
@@ -28,11 +24,44 @@ final lightTheme = ThemeData.light().copyWith(
     bodyText1: body1BoldTextStyle,
     bodyText2: body2NormalTextStyle,
   ),
-);
+  elevatedButtonTheme: ElevatedButtonThemeData(
+    style: ElevatedButton.styleFrom(
+      textStyle: titleTextStyle,
+      primary: AppColors.white,
+      minimumSize: Size.fromHeight(48.0),
+      elevation: 0.0,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(12.0),
+      ),
+    ),
+  ),
+  textButtonTheme: TextButtonThemeData(
+    style: TextButton.styleFrom(
+      primary: AppColors.ltPrimaryColor,
+        textStyle: body2NormalTextStyle,
+      ),
+    ),
+    sliderTheme: SliderThemeData(
+      trackHeight: 2.0,
+      thumbColor: AppColors.white,
+      overlayColor: AppColors.transparent,
+      activeTrackColor: AppColors.ltAccentColor,
+      inactiveTrackColor: AppColors.inactiveBlack,
+    ),
+    appBarTheme: AppBarTheme(
+      centerTitle: true,
+      color: AppColors.transparent,
+      elevation: 0,
+      titleTextStyle: TextStyle(color: AppColors.ltPrimaryColor),
+    ),
+    switchTheme: SwitchThemeData(
+      thumbColor: MaterialStateProperty.all(AppColors.white),
+      trackColor: MaterialStateProperty.all(AppColors.ltAccentColor),
+    ));
 
 final darkTheme = ThemeData.dark().copyWith(
   primaryColor: AppColors.dtPrimaryColor,
-  accentColor: AppColors.dtGreen,
+  accentColor: AppColors.dtAccentColor,
   disabledColor: AppColors.inactiveBlack,
   scaffoldBackgroundColor: AppColors.dtPrimaryColor,
   cardColor: AppColors.dtPrimaryColorDark,
@@ -52,8 +81,38 @@ final darkTheme = ThemeData.dark().copyWith(
     unselectedItemColor: AppColors.inactiveBlack,
     selectedItemColor: AppColors.white,
   ),
-  buttonTheme: ButtonThemeData(
-    buttonColor: AppColors.dtPrimaryColorDark,
-    textTheme: ButtonTextTheme.primary,
+  elevatedButtonTheme: ElevatedButtonThemeData(
+    style: ElevatedButton.styleFrom(
+      textStyle: titleTextStyle,
+      primary: AppColors.dtPrimaryColor,
+      minimumSize: Size.fromHeight(48.0),
+      elevation: 0.0,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(12.0),
+      ),
+    ),
+  ),
+  textButtonTheme: TextButtonThemeData(
+    style: TextButton.styleFrom(
+      primary: AppColors.dtPrimaryColor,
+      textStyle: body2NormalTextStyle,
+    ),
+  ),
+  sliderTheme: SliderThemeData(
+    trackHeight: 2.0,
+    thumbColor: AppColors.white,
+    overlayColor: AppColors.transparent,
+    activeTrackColor: AppColors.ltAccentColor,
+    inactiveTrackColor: AppColors.inactiveBlack,
+  ),
+  appBarTheme: AppBarTheme(
+    centerTitle: true,
+    color: AppColors.transparent,
+    elevation: 0,
+    titleTextStyle: TextStyle(color: AppColors.dtPrimaryColor),
+  ),
+  switchTheme: SwitchThemeData(
+    thumbColor: MaterialStateProperty.all(AppColors.white),
+    trackColor: MaterialStateProperty.all(AppColors.dtAccentColor),
   ),
 );
