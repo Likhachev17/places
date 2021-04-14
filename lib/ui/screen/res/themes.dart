@@ -38,17 +38,26 @@ final lightTheme = ThemeData.light().copyWith(
   textButtonTheme: TextButtonThemeData(
     style: TextButton.styleFrom(
       primary: AppColors.ltPrimaryColor,
-      textStyle: body2NormalTextStyle,
+        textStyle: body2NormalTextStyle,
+      ),
     ),
-  ),
-  sliderTheme: SliderThemeData(
-    trackHeight: 2.0,
-    thumbColor: AppColors.white,
-    overlayColor: AppColors.transparent,
-    activeTrackColor: AppColors.ltAccentColor,
-    inactiveTrackColor: AppColors.inactiveBlack,
-  ),
-);
+    sliderTheme: SliderThemeData(
+      trackHeight: 2.0,
+      thumbColor: AppColors.white,
+      overlayColor: AppColors.transparent,
+      activeTrackColor: AppColors.ltAccentColor,
+      inactiveTrackColor: AppColors.inactiveBlack,
+    ),
+    appBarTheme: AppBarTheme(
+      centerTitle: true,
+      color: AppColors.transparent,
+      elevation: 0,
+      titleTextStyle: TextStyle(color: AppColors.ltPrimaryColor),
+    ),
+    switchTheme: SwitchThemeData(
+      thumbColor: MaterialStateProperty.all(AppColors.white),
+      trackColor: MaterialStateProperty.all(AppColors.ltAccentColor),
+    ));
 
 final darkTheme = ThemeData.dark().copyWith(
   primaryColor: AppColors.dtPrimaryColor,
@@ -95,5 +104,15 @@ final darkTheme = ThemeData.dark().copyWith(
     overlayColor: AppColors.transparent,
     activeTrackColor: AppColors.ltAccentColor,
     inactiveTrackColor: AppColors.inactiveBlack,
+  ),
+  appBarTheme: AppBarTheme(
+    centerTitle: true,
+    color: AppColors.transparent,
+    elevation: 0,
+    titleTextStyle: TextStyle(color: AppColors.dtPrimaryColor),
+  ),
+  switchTheme: SwitchThemeData(
+    thumbColor: MaterialStateProperty.all(AppColors.white),
+    trackColor: MaterialStateProperty.all(AppColors.dtAccentColor),
   ),
 );

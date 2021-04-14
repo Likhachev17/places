@@ -25,3 +25,5 @@ const iconPark = 'assets/icons/Park.svg';
 const iconMuseum = 'assets/icons/Museum.svg';
 const iconCafe = 'assets/icons/Cafe.svg';
 const iconChoice = 'assets/icons/Choice.svg';
+
+const iconInfo = 'assets/icons/Info.svg';

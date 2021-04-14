@@ -24,4 +24,8 @@ class AppTexts {
   static const String filtersTo = 'до';
   static const String filtersShow = 'Показать';
   static const String filtersClear = 'Очистить';
+
+  static const String settings = 'Настройки';
+  static const String darkTheme = 'Тёмная тема';
+  static const String watchTutorial = 'Смотреть туториал';
 }

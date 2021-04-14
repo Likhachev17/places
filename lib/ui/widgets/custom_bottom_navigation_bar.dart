@@ -68,35 +68,7 @@ class CustomBottomNavigationBar extends StatelessWidget {
                 .buttonColor,
           ),
         ),
-        // _BottomBarItem(iconName: iconHeart, activeIconName: iconHeartFull),
       ],
     );
   }
 }
-// Пытаюсь сделать переиспользуемый элемент, но не очень получается:(
-// class _BottomBarItem extends BottomNavigationBarItem {
-//   String iconName;
-//   String activeIconName;
-//   _BottomBarItem({
-//     Key key,
-//     @required this.iconName,
-//     @required this.activeIconName,
-//   }) : assert(
-//           iconName != null,
-//           activeIconName != null,
-//         );
-//
-//   BottomNavigationBarItem build(BuildContext context) {
-//     return BottomNavigationBarItem(
-//       icon: SvgPicture.asset(
-//         iconHeart,
-//         // color: Theme.of(context).buttonColor,
-//       ),
-//       label: '',
-//       activeIcon: SvgPicture.asset(
-//         activeIconName,
-//         // color: Theme.of(context).buttonColor,
-//       ),
-//     );
-//   }
-// }
