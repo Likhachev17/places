@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:places/constants.dart';
 import 'package:places/theme/colors.dart';
-import 'package:places/theme/text_styles.dart';
-import 'file:///C:/myApps/places/lib/ui/sight_card_widgets/sight_card.dart';
+import 'package:places/ui/sight_card_widgets/sight_card.dart';
 import 'package:places/mocks.dart';
 import 'package:places/ui/widgets/custom_tab_bar/custom_tab_bar.dart';
-import 'package:places/ui/widgets/custom_tab_bar/custom_tab_bar_item.dart';
 import 'package:places/ui/widgets/custom_bottom_navigation_bar.dart';
 import 'package:places/ui/widgets/sight_list_widget.dart';
 
@@ -32,7 +30,10 @@ class _VisitingScreenState extends State<VisitingScreen>
       appBar: AppBar(
         title: Text(
           AppTexts.visitingAppBarTitle,
-          style: visitingScreenAppBarTitleTextStyle,
+          style: Theme.of(context)
+              .textTheme
+              .subtitle1
+              .copyWith(color: Theme.of(context).buttonColor),
         ),
         centerTitle: true,
         backgroundColor: AppColors.transparent,
@@ -47,14 +48,15 @@ class _VisitingScreenState extends State<VisitingScreen>
         ),
       ),
       bottomNavigationBar: CustomBottomNavigationBar(),
+
+      /// List with sight cards on visiting screen
       body: TabBarView(
         controller: _controller,
         children: [
           SightListWidget(
-            padding: const EdgeInsets.all(16.0),
             children: [
               SightCard(
-                sight: mocks[0],
+                sight: mocks[6],
               ),
               SightCard(
                 sight: mocks[1],
@@ -65,7 +67,6 @@ class _VisitingScreenState extends State<VisitingScreen>
             ],
           ),
           SightListWidget(
-            padding: const EdgeInsets.all(16.0),
             children: [
               SightCard(
                 sight: mocks[3],
@@ -83,3 +84,4 @@ class _VisitingScreenState extends State<VisitingScreen>
     );
   }
 }
+

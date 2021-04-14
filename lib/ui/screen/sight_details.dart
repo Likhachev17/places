@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:places/domain/sight.dart';
-import 'package:places/theme/text_styles.dart';
 import 'package:places/theme/colors.dart';
 import 'package:places/ui/widgets/network_image_with_loading_indicator';
 import 'package:places/constants.dart';
@@ -14,7 +13,7 @@ class SightDetails extends StatelessWidget {
   const SightDetails({
     Key key,
     @required this.sight,
-  }) : super(key: key);
+  }) : assert(sight != null);
 
   @override
   Widget build(BuildContext context) {
@@ -71,23 +70,23 @@ class SightDetails extends StatelessWidget {
 
 /// Images of the sight on the sight details screen
 class _CardDetailsImage extends StatelessWidget {
-  const _CardDetailsImage({Key key, @required this.url}) : super(key: key);
+  const _CardDetailsImage({Key key, @required this.url}) : assert(url != null);
   final String url;
 
   @override
   Widget build(BuildContext context) {
-    return (Container(
+    return Container(
       width: double.infinity,
       height: 360,
       child: NetworkImageWithLoadingIndicator(
         url: url,
         fit: BoxFit.cover,
       ),
-    ));
+    );
   }
 }
 
-/// White "back" button in the upper left corner on the sight details screen
+/// White/black "back" button in the upper left corner on the sight details screen
 class _CardDetailsBackButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -100,7 +99,7 @@ class _CardDetailsBackButton extends StatelessWidget {
         child: FlatButton(
           padding: EdgeInsets.all(0),
           onPressed: () {},
-          color: AppColors.white,
+          color: Theme.of(context).hoverColor,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(10),
           ),
@@ -116,7 +115,7 @@ class _CardDetailsBackButton extends StatelessWidget {
 
 /// Name of the sight on the sight details screen
 class _CardDetailsName extends StatelessWidget {
-  const _CardDetailsName({Key key, @required this.name}) : super(key: key);
+  const _CardDetailsName({Key key, @required this.name}) : assert(name != null);
   final String name;
 
   @override
@@ -127,7 +126,13 @@ class _CardDetailsName extends StatelessWidget {
       ),
       child: Text(
         name,
-        style: sightCardNameDetailsTextStyle,
+        style: Theme
+            .of(context)
+            .textTheme
+            .headline2
+            .copyWith(color: Theme
+            .of(context)
+            .buttonColor),
       ),
     );
   }
@@ -135,14 +140,20 @@ class _CardDetailsName extends StatelessWidget {
 
 /// Type of the sight on the sight details screen
 class _CardDetailsType extends StatelessWidget {
-  const _CardDetailsType({Key key, @required this.type}) : super(key: key);
+  const _CardDetailsType({Key key, @required this.type}) : assert(type != null);
   final String type;
 
   @override
   Widget build(BuildContext context) {
     return Text(
       type,
-      style: sightCardTypeDetailsTextStyle,
+      style: Theme
+          .of(context)
+          .textTheme
+          .bodyText1
+          .copyWith(color: Theme
+          .of(context)
+          .buttonColor),
     );
   }
 }
@@ -150,14 +161,20 @@ class _CardDetailsType extends StatelessWidget {
 /// Working time of the sight on the sight details screen
 class _CardDetailsWorkTime extends StatelessWidget {
   const _CardDetailsWorkTime({Key key, @required this.workTime})
-      : super(key: key);
+      : assert(workTime != null);
   final String workTime;
 
   @override
   Widget build(BuildContext context) {
     return Text(
       workTime,
-      style: sightCardWorkTimeDetailsTextStyle,
+      style: Theme
+          .of(context)
+          .textTheme
+          .bodyText2
+          .copyWith(color: Theme
+          .of(context)
+          .disabledColor),
     );
   }
 }
@@ -165,7 +182,7 @@ class _CardDetailsWorkTime extends StatelessWidget {
 /// Full description of the sight on the sight details screen
 class _CardDetailsDescription extends StatelessWidget {
   const _CardDetailsDescription({Key key, @required this.details})
-      : super(key: key);
+      : assert(details != null);
   final String details;
 
   @override
@@ -174,7 +191,14 @@ class _CardDetailsDescription extends StatelessWidget {
       padding: const EdgeInsets.symmetric(vertical: 24),
       child: Text(
         details,
-        style: CardDetailsDescriptionTextStyle,
+        style: Theme
+            .of(context)
+            .textTheme
+            .bodyText2
+            .copyWith(color: Theme
+            .of(context)
+            .buttonColor),
+        textAlign: TextAlign.left,
       ),
     );
   }
@@ -195,7 +219,10 @@ class _CardDetailsBuildARouteBtn extends StatelessWidget {
       icon: SvgPicture.asset(iconGO),
       label: Text(
         AppTexts.buildARouteBtnText,
-        style: TextStyle(color: AppColors.white, fontSize: 14),
+        style: Theme
+            .of(context)
+            .textTheme
+            .bodyText1,
       ),
     );
   }
@@ -209,11 +236,17 @@ class _CardDetailsToScheduleBtn extends StatelessWidget {
       onPressed: () {},
       icon: SvgPicture.asset(
         iconCalendar,
-        color: AppColors.inactive,
+        color: AppColors.inactiveBlack,
       ),
       label: Text(
         AppTexts.toScheduleBtnText,
-        style: sightCardToScheduleBtnInactiveTextStyle,
+        style: Theme
+            .of(context)
+            .textTheme
+            .bodyText2
+            .copyWith(
+          color: AppColors.inactiveBlack,
+        ),
       ),
     );
   }
@@ -227,11 +260,19 @@ class _CardDetailsToFavoritesBtn extends StatelessWidget {
       onPressed: () {},
       icon: SvgPicture.asset(
         iconHeart,
-        color: AppColors.primary,
+        color: Theme
+            .of(context)
+            .buttonColor,
       ),
       label: Text(
         AppTexts.toFavoritesBtnText,
-        style: sightCardFavoritesBtnActiveTextStyle,
+        style: Theme
+            .of(context)
+            .textTheme
+            .bodyText2
+            .copyWith(color: Theme
+            .of(context)
+            .buttonColor),
       ),
     );
   }

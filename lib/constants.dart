@@ -7,7 +7,7 @@ class AppTexts {
   static const appHeader = 'Список\nинтересных мест';
   static const toFavoritesBtnText = 'В избранное';
   static const buildARouteBtnText = 'ПОСТРОИТЬ МАРШРУТ';
-  static const toScheduleBtnText = 'В избранное';
+  static const toScheduleBtnText = 'Запланировать';
   static const visitingAppBarTitle = 'Избранное';
   static const visitingWantToVisitTab = 'Хочу посетить';
   static const visitingVisitedTab = 'Посещенные места';
@@ -21,12 +21,12 @@ class AppTexts {
       'Завершите маршрут,\n чтобы место попало сюда.';
 }
 
-/// Sight card decorations
-class AppDecorations {
-  static const cardDecoration = BoxDecoration(
-    color: AppColors.cardBackground,
-    borderRadius: BorderRadius.all(
-      Radius.circular(16),
-    ),
-  );
-}
+// /// Sight card decorations
+// class AppDecorations {
+//   static const cardDecoration = BoxDecoration(
+//     color: AppColors.ltCardBackground,
+//     borderRadius: BorderRadius.all(
+//       Radius.circular(16),
+//     ),
+//   );
+// }

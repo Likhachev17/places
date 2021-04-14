@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:places/constants.dart';
 import 'package:places/domain/sight.dart';
 import 'package:places/theme/colors.dart';
 import 'package:places/theme/text_styles.dart';
 import 'package:places/ui/widgets/network_image_with_loading_indicator';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:places/theme/custom_icons.dart';
 
 //TODO если место закрыто, выводить worktime, иначе описание
@@ -24,7 +22,9 @@ class SightCard extends StatelessWidget {
         height: 188,
         width: double.infinity,
         clipBehavior: Clip.antiAlias,
-        decoration: AppDecorations.cardDecoration,
+        decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(16),
+            color: Theme.of(context).cardColor),
         child: AspectRatio(
           aspectRatio: 3.0 / 2.0,
           child: Column(
@@ -76,7 +76,11 @@ class _SightCardHeader extends StatelessWidget {
           left: 16,
           child: Text(
             type,
-            style: sightCardTypePreviewTextStyle,
+            style: Theme
+                .of(context)
+                .textTheme
+                .bodyText1
+                .copyWith(color: AppColors.white),
           ),
         ),
         Positioned(
@@ -121,7 +125,10 @@ class _SightCardName extends StatelessWidget {
             textAlign: TextAlign.start,
             maxLines: 2,
             overflow: TextOverflow.ellipsis,
-            style: sightCardNamePreviewTextStyle,
+            style: subtitle2TextStyle.copyWith(
+                color: Theme
+                    .of(context)
+                    .buttonColor),
           ),
         ),
       ),
@@ -149,7 +156,11 @@ class _SightCardDetails extends StatelessWidget {
       width: double.infinity,
       child: Text(
         details,
-        style: sightCardDescriptionPreviewTextStyle,
+        style: Theme
+            .of(context)
+            .textTheme
+            .bodyText2
+            .copyWith(color: AppColors.inactiveBlack),
         maxLines: 1,
         overflow: TextOverflow.ellipsis,
       ),

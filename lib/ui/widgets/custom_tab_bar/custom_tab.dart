@@ -3,12 +3,8 @@ import 'package:places/theme/colors.dart';
 import 'package:places/theme/text_styles.dart';
 import 'package:places/ui/widgets/custom_tab_bar/custom_tab_bar.dart';
 
-/// Custom tab widget for [CustomTabBar], with active or inactive state
+/// Custom tab widget for [CustomTabBar]
 class CustomTab extends StatelessWidget {
-  final Color activeBackgroundColor;
-  final Color inactiveBackgroundColor;
-  final TextStyle activeTabTextStyle;
-  final TextStyle inactiveTabTextStyle;
   final bool isActive;
   final String text;
   final VoidCallback onTap;
@@ -17,10 +13,6 @@ class CustomTab extends StatelessWidget {
     Key key,
     @required this.isActive,
     @required this.text,
-    this.activeTabTextStyle = visitingScreenActiveTabTextStyle,
-    this.inactiveTabTextStyle = visitingScreenInactiveTabTextStyle,
-    this.activeBackgroundColor = AppColors.primary,
-    this.inactiveBackgroundColor = AppColors.transparent,
     this.onTap,
   }) : assert(isActive != null && text != null);
 
@@ -30,9 +22,10 @@ class CustomTab extends StatelessWidget {
         child: GestureDetector(
       onTap: () => onTap?.call(),
       child: Container(
-        height: 40,
         decoration: BoxDecoration(
-          color: isActive ? activeBackgroundColor : inactiveBackgroundColor,
+          color: isActive
+              ? Theme.of(context).buttonColor
+              : Theme.of(context).cardColor,
           borderRadius: BorderRadius.all(
             Radius.circular(40),
           ),
@@ -44,7 +37,19 @@ class CustomTab extends StatelessWidget {
               text,
               maxLines: 1,
               overflow: TextOverflow.ellipsis,
-              style: isActive ? activeTabTextStyle : inactiveTabTextStyle,
+              style: isActive
+                  ? Theme
+                  .of(context)
+                  .textTheme
+                  .bodyText1
+                  .copyWith(color: Theme
+                  .of(context)
+                  .hoverColor)
+                  : Theme
+                  .of(context)
+                  .textTheme
+                  .bodyText1
+                  .copyWith(color: AppColors.inactiveBlack),
             ),
           ),
         ),

@@ -31,7 +31,7 @@ final List<Sight> mocks = [
     lon: 39.137255,
     url: 'https://ia.wampi.ru/2020/12/25/nsMGyaYgKFI.jpg',
     details:
-    'Блошиный рынок. Довольно странное место, но здесь я провожу все выходные покупая ерунду',
+        'Блошиный рынок. Довольно странное место, но здесь я провожу все выходные покупая ерунду',
     type: 'event',
     workTime: 'Закрыто до 09:00',
     openTime: TimeOfDay(hour: 9, minute: 0),
@@ -68,6 +68,17 @@ final List<Sight> mocks = [
     url: 'https://ia.wampi.ru/2021/01/16/IMG_20190226_095603.jpg',
     details:
     'А здесь я жил и работал в Шанхае. Очень красивый и невероятно современный город',
+    type: 'place',
+    workTime: 'Закрыто до 09:00',
+    openTime: TimeOfDay(hour: 9, minute: 0),
+    closeTime: TimeOfDay(hour: 21, minute: 0),
+  ),
+  Sight(
+    nameSight: 'Хочу на стажировку',
+    lan: 51.664264,
+    lon: 39.201271,
+    url: 'https://ic.wampi.ru/2021/03/11/Y6iQsGiA1qw.jpg',
+    details: 'Давно хочу у вас работать! Я даже специально купил новый мак на М1 с 16гб!',
     type: 'place',
     workTime: 'Закрыто до 09:00',
     openTime: TimeOfDay(hour: 9, minute: 0),

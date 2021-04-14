@@ -1,11 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:places/theme/colors.dart';
 import 'package:places/ui/widgets/custom_tab_bar/custom_tab.dart';
-import 'package:places/ui/widgets/custom_tab_bar/custom_tab_bar_item.dart';
 
 typedef OnTabTap = void Function(int index);
 
 /// Custom tab bar widget with the rounded edges of [CustomTabBarItem]
+class CustomTabBarItem {
+  final String text;
+
+  CustomTabBarItem({
+    @required this.text,
+  }) : assert(text != null);
+}
+
 class CustomTabBar extends StatelessWidget implements PreferredSizeWidget {
   static const _tabBarHeight = 52.0;
 
@@ -27,7 +33,7 @@ class CustomTabBar extends StatelessWidget implements PreferredSizeWidget {
       child: Container(
         height: _tabBarHeight,
         decoration: BoxDecoration(
-          color: AppColors.cardBackground,
+          color: Theme.of(context).cardColor,
           borderRadius: BorderRadius.all(
             Radius.circular(40.0),
           ),
@@ -51,10 +57,6 @@ class CustomTabBar extends StatelessWidget implements PreferredSizeWidget {
         CustomTab(
           text: items[i].text,
           isActive: controller.index == i,
-          activeTabTextStyle: items[i].activeStyle,
-          inactiveTabTextStyle: items[i].inactiveStyle,
-          activeBackgroundColor: items[i].activeBackgroundColor,
-          inactiveBackgroundColor: items[i].inactiveBackgroundColor,
           onTap: () => onTabTap?.call(i),
         ),
       );
